@@ -1,0 +1,177 @@
+<html>
+<head>
+<link rel="stylesheet" href="js/jquery-ui.min.css">
+<link rel="stylesheet" href="css/my-style.css">
+<script src="js/external/jquery/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script>
+  $( function() {
+    $( "input" ).checkboxradio({
+      icon: false
+    });
+  } );
+</script>
+
+<script>
+//var webapiBaseURL = "http://localhost:5000/api/values/";
+var webapiBaseURL = "http://192.168.1.100:5000/api/values/";
+var xmlhttp = new XMLHttpRequest();	
+
+//document.getElementById("goButton").onclick = xmlhttpReq;
+//$(document).ready(function(){$("#goButton").click(xmlhttpReq);});
+$(function(){$("#goButton").click(xmlhttpReq);});
+
+function xmlhttpReq(){
+	//alert("I am an alert box!");
+	//var webRequest = encodeURI("index.php" + "?" + "reg=" + 
+	//		document.getElementById('myInput').value);
+	
+	//if no relavent checkbox is checked return imediate
+	if($("fieldset.ChlCheckbox > input:checkbox:checked").length == 0)
+		return;
+	
+	
+	$("div.loading").show();
+	$(".results").empty();
+	var aReqArray = [];
+	$("fieldset.ChlCheckbox > input:checkbox:checked").each(function(){
+																
+																var id =  parseInt($(this).attr("name").substring(2))
+																var webRequest = encodeURI(webapiBaseURL + id);
+																var aReq = $.getJSON(webRequest, function(data, status){
+																						/*
+																					    var aResult = $("<p class=\"aresult\"></p>");
+																						var a = $("<span class=\"title\"></span>").text(data[0].title);
+																						var b = $("<span class=\"subtitle\"></span>").text(data[0].subtitle);
+																						var c = $("<span class=\"timing\"></span>").text(data[0].timing);
+																						$(".results").append(aResult);
+																						$("p.aresult:last").append(a,"<br>",b,"<br>",c);
+																						*/
+																						$.each(data,function(index, value){
+																										var aResult = $("<p class=\"aresult\"></p>");
+																										var a = $("<span class=\"title\"></span>").text(value.title);
+																										var b = $("<span class=\"subtitle\"></span>").text(value.subtitle);
+																										var c = $("<span class=\"timing\"></span>").text(value.timing);
+																										$(".results").append(aResult);
+																										$("p.aresult:last").append(a,"<br>",b,"<br>",c);
+																						            });
+																						
+																			          });					  
+																aReq.done(function() {})
+																.fail(function(jqXHR, textStatus, errorThrown) {})
+																.always(function() {/*$("div.loading").hide();*/});
+																aReqArray.push(aReq);
+																});
+	
+	//try the wait command
+	//var deferreds = ajxRqs();
+
+	$.when.apply(null, aReqArray).always(function() {
+		//could use spread syntax
+		//$.when(...my_array).then( ___ );
+		
+		//$("div").append("<p>All done!</p>");
+		$("div.loading").hide();
+		//alert("all done");
+	});
+	
+	//$("div > p")
+	
+	//var webRequest = encodeURI(webapiBaseURL + "1");
+	
+	//$("[title^='Tom']")
+	
+	//xmlhttp.open("GET", url, true);
+	//xmlhttp.send();
+	
+	//$("button").click(function(){
+	//$.get(webRequest, function(data, status){alert(webRequest);});
+	
+	/*
+    $.getJSON(webRequest, function(data, status){
+							//alert(data[0].title);
+							
+							
+							var aResult = $("<p class=\"aresult\"></p>");
+							var a = $("<span class=\"title\"></span>").text(data[0].title);
+							var b = $("<span class=\"subtitle\"></span>").text(data[0].subtitle);
+							var c = $("<span class=\"timing\"></span>").text(data[0].timing);
+							$(".results").append(aResult);
+							$("p.aresult:last").append(a,"<br>",b,"<br>",c);
+							
+							
+							
+							
+							
+							});
+							*/
+					  
+    //    alert("Data: " + data + "\nStatus: " + status);
+    //});
+	//});
+	
+	//alert(webRequest);
+	
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<div class="container">
+	<div class="content-wrapper">
+
+	<h1 class="title">Episode 1 programs starting within a week<h1>
+	<h2 class="subtitle">Useful for recording complete series with sky+.</h2>
+	<p>Scan for 7 days in advance.<p>
+
+	<!--<h2>Channels</h2>-->
+	<fieldset class="ChlCheckbox">
+	<legend>Channels</legend>
+	<label for="checkbox-1">BBC1</label>
+	<input type="checkbox" name="ch001" id="checkbox-1">
+	<label for="checkbox-2">BBC2</label>
+	<input type="checkbox" name="ch002" id="checkbox-2">
+	<label for="checkbox-3">ITV</label>
+	<input type="checkbox" name="ch003" id="checkbox-3">
+	<label for="checkbox-4">Channel 4</label>
+	<input type="checkbox" name="ch004" id="checkbox-4">
+	<label for="checkbox-5">BBC4</label>
+	<input type="checkbox" name="ch005" id="checkbox-5">
+	<label for="checkbox-6">Sky1</label>
+	<input type="checkbox" name="ch006" id="checkbox-6">
+	<label for="checkbox-7">Sky Atlantic</label>
+	<input type="checkbox" name="ch007" id="checkbox-7" = checked>
+	</fieldset>
+	<br>
+
+	<p class="mypar">
+	<!--<a class="ui-button ui-widget ui-corner-all" href="#">Go</a>-->
+	<!--<input class="ui-button ui-widget ui-corner-all" type="submit" value="Go">-->
+	<button class="button ui-button ui-widget ui-corner-all" id="goButton">Go</button>
+	</p>
+	
+	<p class="info">
+	</p>
+	
+	<br>
+	<br>
+	
+	<div class="loading">
+		<!--<p class="loading">loading...</p>-->
+		<!--loading...-->
+	</div>
+	
+	<div class="results">
+
+	</div>
+		
+	</div>
+	
+
+</div>
+
+</body>
+</html>
