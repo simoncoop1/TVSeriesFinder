@@ -1,0 +1,10 @@
+/home/simon/dotnet/projects/SeriesFinder.website/bin/Debug/netcoreapp2.0/SeriesFinder.website.deps.json
+/home/simon/dotnet/projects/SeriesFinder.website/bin/Debug/netcoreapp2.0/SeriesFinder.website.runtimeconfig.json
+/home/simon/dotnet/projects/SeriesFinder.website/bin/Debug/netcoreapp2.0/SeriesFinder.website.runtimeconfig.dev.json
+/home/simon/dotnet/projects/SeriesFinder.website/bin/Debug/netcoreapp2.0/SeriesFinder.website.dll
+/home/simon/dotnet/projects/SeriesFinder.website/bin/Debug/netcoreapp2.0/SeriesFinder.website.pdb
+/home/simon/dotnet/projects/SeriesFinder.website/obj/Debug/netcoreapp2.0/SeriesFinder.website.csproj.CoreCompileInputs.cache
+/home/simon/dotnet/projects/SeriesFinder.website/obj/Debug/netcoreapp2.0/SeriesFinder.website.AssemblyInfoInputs.cache
+/home/simon/dotnet/projects/SeriesFinder.website/obj/Debug/netcoreapp2.0/SeriesFinder.website.AssemblyInfo.cs
+/home/simon/dotnet/projects/SeriesFinder.website/obj/Debug/netcoreapp2.0/SeriesFinder.website.dll
+/home/simon/dotnet/projects/SeriesFinder.website/obj/Debug/netcoreapp2.0/SeriesFinder.website.pdb
