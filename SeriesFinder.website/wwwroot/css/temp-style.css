@@ -1,0 +1,18 @@
+div.mydiv{
+	background-color:yellow;
+	background-image:url("../image/ajax-loader.gif");
+	border-radius: 5px;
+    /*border: 2px solid #73AD21;*/
+    //padding: 10px; 
+    /*height: 70px;*/
+	//box-sizing: border-box;
+	//position: relative;
+	
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	width: 800; 
+	//margin: 0 auto;
+	padding:10px auto;
+	height:100px; 	
+}

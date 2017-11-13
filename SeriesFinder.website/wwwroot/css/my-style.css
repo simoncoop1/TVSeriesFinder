@@ -1,0 +1,140 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	    display: block;
+}
+
+h2.myHeader{    
+    text-align: center;
+	/*width: 75%;*/
+	font-family: myFirstFont;
+	letter-spacing: 4px;
+	color: #580d9d;
+	line-height:2em
+	
+}
+
+div.content-wrapper{
+	background-color:White;
+	border-radius: 5px;
+    /*border: 2px solid #73AD21;*/
+    padding: 10px; 
+    /*height: 70px;*/
+	box-sizing: border-box;
+	position: relative;
+	
+	width: 1240px; max-width: 100%; min-width: 768px; margin: 0 auto;
+	height: max-height: 100%; min-height: 1000px;
+	
+}
+
+div.container{
+	background-color: #121b6b;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:5px;
+	padding-top:5px;
+	/*position: relative*/	
+}
+
+p.mypar{
+	position: absolute;
+	right:20px;
+}
+
+h2.subtitle{
+	color:#999999;
+	position:relative;
+	top:-20px;
+	
+}
+
+p.aresult{
+	border: 2px solid black;
+	padding:3px;
+	padding-top:9px;
+	padding-bottom:9px
+}
+
+span.subtitle{
+	color:#999999;
+}
+
+span.timing{
+	color:#999999;
+}
+
+h1.title{
+}
+
+div.loading{
+	position: fixed;
+    bottom: 50%;
+    right: 50%;
+    width: 150px;
+	height: 150px;
+	border: 1px solid black;
+	margin-top:-150px;
+	margin-left:-150px;
+	background-color: white;
+	
+	text-align: center;
+	line-height: 150px;
+	
+	//display: inline; 
+	display: none; 
+	
+	//color:white;
+	
+	
+    //background: #3e79c1; /* For browsers that do not support gradients */        
+    //background: -webkit-linear-gradient(-45deg, #3e79c1, #130b80); /* For Safari 5.1 to 6.0 */
+    //background: -o-linear-gradient(-45deg, #3e79c1, #130b80); /* For Opera 11.1 to 12.0 */
+    //background: -moz-linear-gradient(-45deg, #3e79c1, #130b80); /* For Firefox 3.6 to 15 */
+    //background: linear-gradient(-45deg, #3e79c1, #130b80); /* Standard syntax (must be last) */
+	
+	background-color:#349FD4;
+	background-image:url("../image/ajax-loader.gif");
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+	
+}
+
+p.loading{
+	//padding-top:100px:
+    position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+
+
+img.loading{
+	//display: none
+	
+}
+
+div.myDivFooter{
+	/*width:100px;*/
+	/*border:15px solid lightblue ;*/
+    padding: 10px;
+	padding-top: 50px;
+    /*margin: 25px;*/
+
+}
+
+p.myParagraph{
+	text-align: left;
+}
+
+
+
+
+
+    
+
